@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TaskFlow — Advanced To-Do List</title>
+
+  <!-- External Referencing -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Internal Referencing -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-animation"></div>
+
+<div class="wrapper">
+
+  <header>
+    <p class="eyebrow">Web Engineering Project</p>
+    <h1>Task<span>Flow</span></h1>
+
+    <!-- Absolute Reference -->
+    <a href="https://developer.mozilla.org/" target="_blank" class="learn-btn">
+      Learn Web Dev
+    </a>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-num" id="stat-total">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-num" id="stat-done">0</span>
+        <span class="stat-label">Done</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-num" id="stat-left">0</span>
+        <span class="stat-label">Left</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- FORM -->
+  <form class="input-area" id="task-form">
+
+    <input type="text" id="task-input" placeholder="Enter task" maxlength="120">
+
+    <select id="priority">
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+
+    <button type="submit" class="btn-add">Add Task</button>
+  </form>
+
+  <!-- Search + Sorting -->
+  <div class="controls">
+
+    <input type="text" id="search" placeholder="Search tasks...">
+
+    <select id="sort-select">
+      <option value="latest">Latest</option>
+      <option value="oldest">Oldest</option>
+      <option value="priority">Priority</option>
+    </select>
+
+    <button id="theme-btn">🌙</button>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span>Progress</span>
+      <span id="prog-pct">0%</span>
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    </div>
+      <!-- Filters -->
+  <div class="filters">
+    <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+    <button class="filter-btn" onclick="setFilter('active', this)">Active</button>
+    <button class="filter-btn" onclick="setFilter('done', this)">Completed</button>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Priority</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody id="task-list"></tbody>
+    </table>
+  </div>
+
+  <!-- Empty -->
+  <div class="empty-state" id="empty-state">
+    No tasks available.
+  </div>
+
+  <!-- API Section -->
+  <div class="quote-box">
+    <h3>Motivational Quote</h3>
+    <p id="quote">Loading...</p>
+  </div>
+
+  <!-- Responsive Image Gallery -->
+  <section class="gallery">
+    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800" alt="gallery">
+
+    <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=800" alt="gallery">
+
+    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800" alt="gallery">
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
